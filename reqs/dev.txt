@@ -8,6 +8,8 @@ alabaster==0.7.12
     # via sphinx
 alembic==1.9.1
     # via flask-migrate
+atomicwrites==1.4.1
+    # via pytest
 attrs==21.2.0
     # via pytest
 babel==2.9.1
@@ -26,8 +28,15 @@ click==8.1.3
     # via
     #   flask
     #   pip-tools
-codecov==2.1.12
+codecov==2.1.13
     # via -r reqs/dev.in
+colorama==0.4.6
+    # via
+    #   build
+    #   click
+    #   pytest
+    #   sphinx
+    #   tox
 coverage[toml]==6.0
     # via
     #   codecov
@@ -40,7 +49,7 @@ docutils==0.17.1
     # via sphinx
 email-validator==1.1.3
     # via
-    #   -r reqs/app.in
+    #   -r reqs\app.in
     #   shopyo
 et-xmlfile==1.1.0
     # via openpyxl
@@ -52,7 +61,7 @@ flake8==3.9.2
     # via -r reqs/dev.in
 flask==2.2.0
     # via
-    #   -r reqs/app.in
+    #   -r reqs\app.in
     #   flask-admin
     #   flask-login
     #   flask-mailman
@@ -66,7 +75,7 @@ flask-admin==1.6.0
     # via shopyo
 flask-login==0.6.2
     # via
-    #   -r reqs/app.in
+    #   -r reqs\app.in
     #   shopyo
 flask-mailman==0.3.0
     # via shopyo
@@ -75,16 +84,18 @@ flask-marshmallow==0.14.0
 flask-migrate==4.0.1
     # via shopyo
 flask-reuploaded==1.2.0
-    # via -r reqs/app.in
+    # via -r reqs\app.in
 flask-sqlalchemy==2.5.1
     # via
-    #   -r reqs/app.in
+    #   -r reqs\app.in
     #   flask-migrate
     #   shopyo
 flask-wtf==1.0.1
     # via shopyo
 greenlet==2.0.1
-    # via sqlalchemy
+    # via
+    #   -r reqs\app.in
+    #   sqlalchemy
 identify==2.5.3
     # via pre-commit
 idna==3.2
@@ -117,7 +128,9 @@ marshmallow==3.19.0
     #   marshmallow-sqlalchemy
     #   shopyo
 marshmallow-sqlalchemy==0.28.1
-    # via shopyo
+    # via
+    #   -r reqs\app.in
+    #   shopyo
 mccabe==0.6.1
     # via flake8
 mkdocs-material-extensions==1.1.1
@@ -125,9 +138,11 @@ mkdocs-material-extensions==1.1.1
 nodeenv==1.7.0
     # via pre-commit
 numpy==1.24.1
-    # via pandas
+    # via
+    #   -r reqs\app.in
+    #   pandas
 openpyxl==3.0.10
-    # via -r reqs/app.in
+    # via -r reqs\app.in
 packaging==23.0
     # via
     #   build
@@ -136,10 +151,10 @@ packaging==23.0
     #   pytest
     #   sphinx
     #   tox
-pandas==1.5.2
-    # via -r reqs/app.in
-pillow==9.2.0
-    # via -r reqs/app.in
+pandas==2.2.2
+    # via -r reqs\app.in
+pillow==10.4.0
+    # via -r reqs\app.in
 pip-tools==6.12.1
     # via -r reqs/dev.in
 platformdirs==2.4.0
@@ -161,7 +176,7 @@ pyflakes==2.3.1
 pygments==2.10.0
     # via sphinx
 pymysql==1.0.2
-    # via -r reqs/app.in
+    # via -r reqs\app.in
 pyproject-hooks==1.0.0
     # via build
 pytest==6.1.1
@@ -176,7 +191,7 @@ pytest-order==1.0.0
 python-dateutil==2.8.2
     # via pandas
 pythoncms==1.2.1
-    # via -r reqs/app.in
+    # via -r reqs\app.in
 pytz==2021.3
     # via
     #   babel
@@ -230,6 +245,8 @@ tomli==1.2.1
     #   pyproject-hooks
 tox==3.24.4
     # via -r reqs/dev.in
+tzdata==2024.2
+    # via pandas
 urllib3==1.26.7
     # via requests
 virtualenv==20.8.1
